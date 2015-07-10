@@ -1,1 +1,1 @@
-The MonPi project's source code is here. For more info visit monpi.net.
+The MonPi project's source code will reside here. Mostly, it is written in Python and leveraging Flask framework.
