@@ -1,12 +1,13 @@
 import subprocess
 import sys
 import os.path
+import psutil
 
 print "Monitoring broadcast packets on the network..."
 
 # loop range set arbitrarily for testing
 for x in range(0, 10): 
-    
+
     subprocess.call(['sudo tshark -i eth0 -a duration:2 -w /root/capfile'], shell=True)
     # moving file to different location to avoid root permission problem
     subprocess.call(['sudo mv /root/capfile /home/nestig/monpi/capfile'], shell=True)
@@ -18,22 +19,22 @@ for x in range(0, 10):
     lrow.stdout.close()  # close output stream
     stdout, stderr = dbrate.communicate() # connects PIPE
     sys.stdout.write(stdout) # no newline bullshit
-    infile = "/home/nestig/monpi/input.txt" # path to the input file to be modified
+    infile = "/home/nestig/monpi/logs/network.txt" # path to the input file to be modified
     openfile = open(infile, 'a')
     space = " " 
     y = x * 5	# holds approximate intervals
     
-    # write to file the formatted data
+    # write the formatted data to file
     openfile.write(str(y))
     openfile.write(space)    
     openfile.write(stdout)
     openfile.close()	
 
-# display graph
-subprocess.call(['python /home/nestig/monpi/filedata_graph.py'], shell=True)
+# call psutils.py to get memory and cpu stats
+subprocess.call(['python /home/nestig/monpi/psutils.py'], shell=True)
+# subprocess.call(['python /home/nestig/monpi/filedata_graph.py'], shell=True)
 
-
-#--------------------------------------------------------OBSOLETE--------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # subprocess.call(['python /home/nestig/monpi/filedata_graph.py'], shell=True)
 # os.popen('awk 'NR == 2 {printf "%s", $3} NR == 3 {print " " $4}' /home/nestig/monpi/capfile>>  /home/nestig/monpi/input.txt')
 # f=open('/home/nestig/monpi/output.txt', 'r')

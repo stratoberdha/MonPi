@@ -3,6 +3,11 @@ import sys
 import subprocess
 import psutil as ps
 
+
+
+
+print "Collecting info on RAM and CPU: "
+
 for x in range(0, 10):
     cpu = ps.cpu_percent(interval=2)
     mem = ps.virtual_memory()
@@ -30,15 +35,15 @@ for x in range(0, 10):
     openfile.write('\n')
     openfile.close()
     
-    print "Try: ",  x
+   
      
 
 # call filedata_graph.py to plot
 subprocess.call(['python /home/nestig/monpi/filedata_graph.py'], shell=True)
 
-#subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/network.txt'], shell=True)
-#subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/memory.txt'], shell=True)
-#subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/cpu.txt'], shell=True)
+subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/network.txt'], shell=True)
+subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/memory.txt'], shell=True)
+subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/cpu.txt'], shell=True)
 
     #print m
     # print the data to the screen
