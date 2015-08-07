@@ -1,10 +1,10 @@
-# demonstrate psutil for memory and cpu usages
+# import the libraries needed
 import sys
 import subprocess
 import psutil as ps
 
 
-
+# demonstrate psutil for memory and cpu usages
 
 print "Collecting info on RAM and CPU: "
 
@@ -44,10 +44,5 @@ subprocess.call(['python /home/nestig/monpi/filedata_graph.py'], shell=True)
 subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/network.txt'], shell=True)
 subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/memory.txt'], shell=True)
 subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/cpu.txt'], shell=True)
-
-    #print m
-    # print the data to the screen
-    #print "CPU usage: ", cpu
-    #print "Memory usage: ", mem.used >> 20
 
 
