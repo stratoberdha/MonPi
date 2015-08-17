@@ -1,9 +1,9 @@
-# Import matplotlib and numpy for plotting.
+# Import matplotlib and numpy libraries for plotting.
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 
-# Check for the logs.
+# Check log files used for data input.
 try:
     netfile = open('./logs/network.txt', 'r')
     memfile = open('./logs/memory.txt', 'r')
