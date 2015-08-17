@@ -1,3 +1,5 @@
+"""graph.py: Plot the collected data about system and network usage to a graph dynamically."""
+
 # Import matplotlib and numpy libraries for plotting.
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
