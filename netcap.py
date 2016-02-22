@@ -18,7 +18,7 @@ for x in range(0, 10):
     subprocess.call(['sudo mv /root/capfile ./capfile'], shell=True)
     
     # Next 3 lines are calls to process output formatting of network packets captured
-    pcap = subprocess.Popen(["sudo", "capinfos", "-yu", "/home/nestig/monpi/capfile"], stdout=subprocess.PIPE)
+    pcap = subprocess.Popen(["sudo", "capinfos", "-yu", "/home/$USER/MonPi/capfile"], stdout=subprocess.PIPE)
     lrow = subprocess.Popen(["awk",  "NR==3"], stdin=pcap.stdout, stdout=subprocess.PIPE)
     dbrate = subprocess.Popen (["cut",  "-c22-25"], stdin=lrow.stdout, stdout=subprocess.PIPE)
     
