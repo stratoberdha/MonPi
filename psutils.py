@@ -43,9 +43,9 @@ for x in range(0, 10):
     
 
 # Call graph.py to plot based on the log files.
-subprocess.call(['python /home/nestig/monpi/filedata_graph.py'], shell=True)
+subprocess.call(['python /home/$USER/MonPi/filedata_graph.py'], shell=True)
 
 # Clear the log files after plotting is done.
-subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/network.txt'], shell=True)
-subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/memory.txt'], shell=True)
-subprocess.call(['cat /dev/null > /home/nestig/monpi/logs/cpu.txt'], shell=True)
+subprocess.call(['cat /dev/null > /home/$USER/MonPi/logs/network.txt'], shell=True)
+subprocess.call(['cat /dev/null > /home/$USER/MonPi/logs/memory.txt'], shell=True)
+subprocess.call(['cat /dev/null > /home/$USER/MonPi/logs/cpu.txt'], shell=True)

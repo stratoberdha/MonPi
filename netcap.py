@@ -46,4 +46,4 @@ for x in range(0, 10):
     openfile.close()	
 
 # Call psutils.py script to collect system usage statistics.
-subprocess.call(['python /home/nestig/monpi/psutils.py'], shell=True)
+subprocess.call(['python /home/$USER/MonPi/psutils.py'], shell=True)
